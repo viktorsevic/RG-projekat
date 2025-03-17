@@ -1,6 +1,5 @@
 #include <glad/glad.h>
 #include <filesystem>
-#include <array>
 #include <stb_image.h>
 #include <engine/graphics/OpenGL.hpp>
 #include <engine/resources/Shader.hpp>
@@ -170,8 +169,23 @@ namespace engine::graphics {
         CHECKED_GL_CALL(glDisable, GL_DEPTH_TEST);
     }
 
-    void OpenGL::clear_buffers() {
-        CHECKED_GL_CALL(glClear, GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    void OpenGL::enable_blend() {
+        CHECKED_GL_CALL(glEnable, GL_BLEND);
+    }
+
+    void OpenGL::disable_blend() {
+        CHECKED_GL_CALL(glDisable, GL_BLEND);
+    }
+
+    void OpenGL::gl_blend_func() {
+        CHECKED_GL_CALL(glBlendFunc, GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    }
+
+    void OpenGL::clear_buffers(bool should_clear_stencil) {
+        if (should_clear_stencil)
+            CHECKED_GL_CALL(glClear, GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        else
+            CHECKED_GL_CALL(glClear, GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
     uint32_t face_index(std::string_view name) {
@@ -203,4 +217,7 @@ namespace engine::graphics {
         }
     }
 
+    void OpenGL::delete_texture(unsigned int texture) {
+        CHECKED_GL_CALL(glDeleteTextures, 1, &texture);
+    }
 };

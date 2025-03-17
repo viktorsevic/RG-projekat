@@ -1,48 +1,50 @@
-# {NAME-OF-THE-PROJECT}
+# SKULL SNEAK
 
-{INDEX} - {STUDENT-FULL-NAME}  
-{PROJECT DESCRIPTION}
+mi22091 - Viktor Šević  
+The goal of the game is to cross the bridge without being spotted by the rotating skull.
 
 ## Controls
 
-{BUTTON1} -> {ACTION1}  
-{BUTTON2} -> {ACTION2}  
-...  
-{BUTTONN} -> {ACTIONN}
+W -> FORWARD    
+S -> BACKWARD (spectator mode only)     
+D -> RIGHT (spectator mode only)        
+A -> LEFT (spectator mode only)      
+SPACE -> UP (spectator mode only)        
+L_SHIFT -> DOWN (spectator mode only)
 
 ## Features
 
 ### Fundamental:
 
-[ ] Model with lighting
-[ ] Two types of lighting with customizable colors and movement through GUI or ACTIONS
-[ ] {ACTION_X} --- AFTER_M_SECONDS---Triggers---> {EVENT_A} ---> AFTER_N_SECONDS---Triggers---> {EVENT_B}
+[X] Skull model, eyes that are inside the skull, arena, bridge
+[X] 2 eyes that can change color through GUI and a directional light that mimics the sun
+[X] moving while skull is looking -> teleported to the start -> 1 less heart
 
 ### Group A:
 
-[ ] Frame-buffers with post-processing   
+[X] Frame-buffers with post-processing   
 [ ] Instancing  
 [ ] Off-screen Anti-Aliasing  
 [ ] Parallax Mapping
 
 ### Group B:
-[ ] Bloom with the use of HDR  
+
+[X] Bloom with the use of HDR  
 [ ] Deferred Shading  
 [ ] Point Shadows  
 [ ] SSAO
 
 ### Engine improvement:
 
-[ ] ...
+[X] Added a post-processing handler to process bloom, filters and health bar rendering
 
 ## Models:
 
-[link1]   
-[link2]
+[https://free3d.com/3d-model/skull-v3--785914.html]     
+[https://www.cgtrader.com/free-3d-models/exterior/street-exterior/stone-bridge-64c81922-4456-400c-ab98-83fdbbd01b4f]    
+[https://www.cgtrader.com/items/4040060/download-page]      
+[https://free3d.com/3d-model/colosseum-v1--937409.html] 
 
 ## Textures
-
-[link1]  
-[link2]
 
 {OTHER-RESOURCES}

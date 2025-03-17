@@ -129,9 +129,25 @@ namespace engine::graphics {
         static void disable_depth_testing();
 
         /**
-        * @brief Clears GL_DEPTH_BUFFER_BIT, GL_COLOR_BUFFER_BIT, and GL_STENCIL_BUFFER_BIT.
+        * @brief Enables blend.
         */
-        static void clear_buffers();
+        static void enable_blend();
+
+        /**
+        * @brief Disables blend.
+        */
+        static void disable_blend();
+
+        /**
+         * @brief sets up the blend function in OpenGL
+         */
+        static void gl_blend_func();
+
+        /**
+        * @brief Clears GL_DEPTH_BUFFER_BIT, GL_COLOR_BUFFER_BIT, and GL_STENCIL_BUFFER_BIT.
+        * @param should_clear_stencil if true will clear stencil buffer, if false wont
+        */
+        static void clear_buffers(bool should_clear_stencil = true);
 
         /**
         * @brief Retrieve the shader compilation error log message.
@@ -139,6 +155,12 @@ namespace engine::graphics {
         * @returns shader compilation error message.
         */
         static std::string get_compilation_error_message(uint32_t shader_id);
+
+        /**
+        * @brief deletes a texture
+        * @param texture the texture id of the texture that should be deleted
+        */
+        static void delete_texture(unsigned int texture);
 
     private:
         /**
